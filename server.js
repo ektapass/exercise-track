@@ -6,6 +6,7 @@ const cors= require('cors')
 const db = mongoose.connection
 const extrsData = require('./utilities/data')
 const extrsControllers = require('./controllers/extrs')
+const userControllers = require('./controllers/user')
 
 // Environmental Varibles
 const app = express()
@@ -27,7 +28,9 @@ app.use(express.static('public')) // we need to tell express to use the public d
 app.use(cors())
 
 // Routes
-app.use('/extrs',extrsControllers)//telling server.js to get the routes from controllers/todos
+app.use('/extrs',extrsControllers)
+app.use('/users', userControllers);
+//telling server.js to get the routes from controllers/todos
 // app.get('/todos', (req,res) => {
 //     Todos.find({}, (err, foundTodos) =>{
 //         res.json(foundTodos)

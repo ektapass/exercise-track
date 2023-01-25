@@ -12,13 +12,13 @@ router.get('/', (req, res)=>{
 // New - Will be handled by React application
 // Delete
 router.delete('/:id', (req, res)=>{
-    Todos.findByIdAndRemove(req.params.id, (err, deletedExtr)=>{
+    Extrs.findByIdAndRemove(req.params.id, (err, deletedExtr)=>{
         res.json(deletedExtr);
     });
 });
 // Update
 router.put('/:id', (req, res)=>{
-    Extrs.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedTodo)=>{
+    Extrs.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedExtr)=>{
         res.json(updatedTodo);
     });
 });
