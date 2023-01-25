@@ -1,8 +1,11 @@
 const mongoose = require('mongoose')
 
 const extrSchema = new mongoose.Schema(
+   
+       
    {
    description: String,
+   duration:Number,
    complete: Boolean
 }
 )

@@ -35,7 +35,10 @@ router.get('/:id', (req, res)=>{
     User.findById(req.params.id, (err, foundUser)=>{
         res.json(foundUser);
     });
+
 });
+
+  
 
 
 module.exports = router;

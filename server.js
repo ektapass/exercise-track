@@ -2,9 +2,11 @@ const express = require('express')
 require('dotenv').config()
 const mongoose = require('mongoose')
 const Extrs = require('./models/extrs')
+const Users = require('./models/users')
 const cors= require('cors')
 const db = mongoose.connection
-const extrsData = require('./utilities/data')
+const extrsData = require('./utilities/exdata')
+const usersData = require('./utilities/userdata')
 const extrsControllers = require('./controllers/extrs')
 const userControllers = require('./controllers/user')
 
@@ -30,17 +32,16 @@ app.use(cors())
 // Routes
 app.use('/extrs',extrsControllers)
 app.use('/users', userControllers);
-//telling server.js to get the routes from controllers/todos
-// app.get('/todos', (req,res) => {
-//     Todos.find({}, (err, foundTodos) =>{
-//         res.json(foundTodos)
-//     })
-// })
 
 // Seeding the db
 app.get('/seed', async (req, res) => {
     await Extrs.deleteMany({});
     await Extrs.insertMany(extrsData);
+    res.send('done!');
+  });
+  app.get('/seed2', async (req, res) => {
+    await Users.deleteMany({});
+    await Users.insertMany(usersData);
     res.send('done!');
   });
 

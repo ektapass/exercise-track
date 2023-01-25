@@ -17,6 +17,7 @@ router.delete('/:id', (req, res)=>{
     });
 });
 // Update
+
 router.put('/:id', (req, res)=>{
     Extrs.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedExtr)=>{
         res.json(updatedTodo);
@@ -35,6 +36,7 @@ router.get('/:id', (req, res)=>{
         res.json(foundExtr);
     });
 });
+
 
 
 module.exports = router;
