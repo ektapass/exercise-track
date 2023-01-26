@@ -10,6 +10,14 @@ This is a backend API for a MERN stack  exercise tracking system using Mongoose 
 ### Github Access
 [Github](https://github.com/ektapass/exercise-track.git)
 
+### Technologies Used
+* Mongoose
+* EXpress
+* React
+* Node
+
+
+
 ## Installing Dependencies
 
 Run following commands in terminal:
