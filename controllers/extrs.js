@@ -20,7 +20,7 @@ router.delete('/:id', (req, res)=>{
 
 router.put('/:id', (req, res)=>{
     Extrs.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedExtr)=>{
-        res.json(updatedTodo);
+        res.json(updatedExtr);
     });
 });
 // Create
